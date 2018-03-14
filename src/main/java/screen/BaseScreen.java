@@ -24,6 +24,4 @@ public class BaseScreen {
             return false;
         }
     }
-    //add
-
 }

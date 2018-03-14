@@ -13,6 +13,12 @@ public class Home extends BaseScreen{
     MobileElement recommendedBooks;
     @AndroidFindBy(id = "com.google.android.apps.books:id/li_thumbnail")
     MobileElement bookshop;
+    @AndroidFindBy(id = "Tell us what you like")
+    MobileElement whatYouLikeButton;
+    @AndroidFindBy(accessibility = "Which genres do you love? Choose from genres listed by popularity.")
+    MobileElement newPage;
+
+
 
     public Home(AppiumDriver driver) {super(driver);}
 
@@ -25,5 +31,9 @@ public class Home extends BaseScreen{
     public boolean isRecommendedBooksDisplayed(){return isElementDisplayed(recommendedBooks);}
 
     public void tapBookshop(){bookshop.click();}
+
+    public void tapWhatYouLikeBtn(){whatYouLikeButton.click();}
+
+    public boolean isNewPageIsDisplayed(){return isElementDisplayed(newPage);}
 
 }

@@ -3,6 +3,7 @@ package app;
 import io.appium.java_client.AppiumDriver;
 import screen.Home;
 import screen.Library;
+import screen.Search;
 import screen.Shop;
 
 public class PlayStore {
@@ -26,6 +27,11 @@ public class PlayStore {
     public Shop Shop()
     {
         return new Shop(driver);
+    }
+
+    public Search Search()
+    {
+        return new Search(driver);
     }
 
 }

@@ -20,6 +20,7 @@ import java.net.URL;
 
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import utils.GetScreenshot;
 //import driver.AppiumDriverBuilder;
 //import rest.PlayerAPICall;
 //import utils.GetScreenshot;
@@ -58,12 +59,12 @@ public class TestBase {
         {
             logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " Test case FAILED due to below issues:", ExtentColor.RED));
             logger.fail(result.getThrowable());
-            //logger.addScreenCaptureFromPath(GetScreenshot.capture(DesiredCapab.setup()));
+            logger.addScreenCaptureFromPath(GetScreenshot.capture(DesiredCapab.setup()));
         }
         else if (result.getStatus() == ITestResult.SUCCESS)
         {
             logger.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " Test Case PASSED", ExtentColor.GREEN));
-            //logger.addScreenCaptureFromPath(GetScreenshot.capture(DesiredCapab.setup()));
+            logger.addScreenCaptureFromPath(GetScreenshot.capture(DesiredCapab.setup()));
         }
         else if (result.getStatus() == ITestResult.SKIP)
         {

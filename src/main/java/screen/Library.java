@@ -5,6 +5,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.By;
+import screen.Search;
 
 public class Library extends BaseScreen{
     @AndroidFindBy(id = "com.google.android.apps.books:id/bottom_my_library")
@@ -32,11 +33,5 @@ public class Library extends BaseScreen{
     public boolean isShelvesClickable(){return (shelves).isSelected();}//isEnabled
 
     public boolean isEbookClickable(){return (ebooks).isSelected();}
-
-
-
-
-
-
 
 }
