@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class GetScreenshot {
-    private final static String scrShotDir = System.getProperty("//Users//hburianova/Reports") + File.separator + "appium";
+    private final static String scrShotDir = System.getProperty("user.home") + File.separator + "Reports";
     private static String destFile;
 
     public static String capture(AppiumDriver driver) throws IOException

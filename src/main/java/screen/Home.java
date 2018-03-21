@@ -2,7 +2,9 @@ package screen;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import utils.Swipe;
 
 public class Home extends BaseScreen{
     @AndroidFindBy(id = "com.google.android.apps.books:id/bottom_read_now")
@@ -32,7 +34,13 @@ public class Home extends BaseScreen{
 
     public void tapBookshop(){bookshop.click();}
 
-    public void tapWhatYouLikeBtn(){whatYouLikeButton.click();}
+    public void tapWhatYouLikeBtn(){
+        Swipe.down(driver);
+
+        whatYouLikeButton.click();
+    }
+
+    public boolean isWhatYouLikeDisplayed(){return isElementDisplayed(whatYouLikeButton);}
 
     public boolean isNewPageIsDisplayed(){return isElementDisplayed(newPage);}
 

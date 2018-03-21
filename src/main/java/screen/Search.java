@@ -3,6 +3,7 @@ package screen;
 import com.sun.org.apache.bcel.internal.generic.RETURN;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.Keys;
@@ -22,9 +23,14 @@ public class Search extends BaseScreen{
 
     public void inputSearchWord(){inputField.sendKeys("book");}
 
-    public void tapEnter(){inputField.sendKeys(Keys.RETURN);}
+    public void tapEnter(){
+        inputField.sendKeys(Keys.RETURN);
+    }
 
-    public void tapReturn(){driver.getKeyboard().sendKeys(Keys.RETURN);}
+    public void tapReturn(){
+        new TouchAction(driver).press(666, 1112).release().perform();
+        //driver.getKeyboard().sendKeys(Keys.RETURN);
+        }
 
     public void searchNothing(){inputField.sendKeys("");}
 
