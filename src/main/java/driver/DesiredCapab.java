@@ -20,6 +20,7 @@ public class DesiredCapab {
         dc.setCapability("appActivity","com.google.android.apps.play.books.app.HomeActivity");
         dc.setCapability("appPackage", "com.google.android.apps.books");
         dc.setCapability("autoAcceptAlerts", true);
+        //dc.setCapability("unicodeKeyboard", true);
 
         return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), dc);}
 }
