@@ -1,6 +1,7 @@
 
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import screen.Home;
@@ -142,31 +143,36 @@ public class FirstTest extends TestBase {
         playStore.Library().tapLibraryBtn();
         playStore.Search().tapSearchBtn();
         playStore.Search().inputSearchWord();
-        playStore.Search().tapReturn();// Enter doesn't work
+        playStore.Search().tapReturn();// Enter doesn't work//первый элемент из списка
         logger.log(Status.PASS, "User fill in key word to Search");
         assertTrue("Results are not shown if search using key word", playStore.Search().isSearchResultDisplayed());
     }
 
     @Test
-    public void testWothSwipe() {
+    public void testWithSwipe() {
         logger = extent.createTest("T13: User swipe to tap button");
         logger.assignCategory("Home");
         logger.assignAuthor("Hanna Burianova");
-        playStore.Home();
-        do {
-            new Swipe().down(AppiumDriver);
-        }
+        playStore.Home().tapHomeBtn();
 
-//
 //        do {
 //            new Swipe().down(driver);
 //        }
-//        while(activities.isDisplayed() == false);
-
-
-        while(Home(). == false);
+//        while(!playStore.Home().isWhatYouLikeDisplayed());
         playStore.Home().tapWhatYouLikeBtn();
         logger.log(Status.PASS, "User fill in key word to Search");
         assertTrue("Results are not shown if search using key word", playStore.Home().isNewPageIsDisplayed());
     }
+
+
+//    isFoundElement = driver.findElements(myElement).size() > 0;
+//while (!isFoundElement) {
+//        // do something
+//    }
+
+    //
+//        do {
+//            new Swipe().down(driver);
+//        }
+//        while(activities.isDisplayed() == false);
 }
